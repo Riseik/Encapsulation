@@ -3,11 +3,11 @@
 class Window
 {
 public:
-	void Init();
-	void CreateWindow();
-	void IsOpen();
-	void Clear();
-	void DrawSprite();
+	virtual void Init();
+	virtual void CreateWindow();
+	virtual void IsOpen();
+	virtual void Clear();
+	virtual void DrawSprite();
 
 private:
 

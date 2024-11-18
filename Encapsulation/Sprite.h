@@ -3,9 +3,9 @@
 class Sprite
 {
 public:
-	void LoadSprite();
-	void GetData();
-	void SetPosition();
+	virtual void LoadSprite();
+	virtual void GetData();
+	virtual void SetPosition();
 
 private:
 
