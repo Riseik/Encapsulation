@@ -8,7 +8,7 @@ void Window::CreateWindow()
 {
 }
 
-void Window::IsOpen()
+bool Window::IsOpen()
 {
 }
 
