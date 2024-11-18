@@ -1,6 +1,8 @@
 #pragma once
 
-class SpriteRaylib
+#include "Sprite.h"
+
+class SpriteRaylib : public Sprite
 {
 };
 

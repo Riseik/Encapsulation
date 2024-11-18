@@ -1,5 +1,8 @@
 #pragma once
-class WindowSDL
+
+#include "Window.h"
+
+class WindowSDL : public Window
 {
 };
 
