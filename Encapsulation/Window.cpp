@@ -4,12 +4,13 @@ void Window::Init()
 {
 }
 
-void Window::CreateWindow()
+void Window::CreateWindow(const char*, int, int)
 {
 }
 
 bool Window::IsOpen()
 {
+	return 1;
 }
 
 void Window::Clear()

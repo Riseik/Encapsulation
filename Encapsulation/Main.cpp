@@ -1,9 +1,14 @@
+#define SDL_MAIN_HANDLED
+
 #include <iostream>
 #include "WindowSDL.h"
+#include "WindowRaylib.h"
 
 int main()
 {
-    Window* win = new WindowSDL();
+    Window* win = new WindowRaylib();
+
+    win->CreateWindow("test", 600, 600);
 
     Sprite* s = new Sprite();
 
@@ -16,5 +21,5 @@ int main()
         win->DrawSprite();
     }
 
-    std::cout << "Hello World!\n";
+    return 0;
 }
