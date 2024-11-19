@@ -6,7 +6,7 @@
 
 int main()
 {
-    Window* win = new WindowSDL();
+    Window* win = new WindowRaylib();
 
     win->CreateWindow("test", 600, 600);
 
