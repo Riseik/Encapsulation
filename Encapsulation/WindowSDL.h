@@ -9,7 +9,7 @@ class WindowSDL : public Window
 	void CreateWindow(const char*, int, int) override;
 	void Clear() override;
 	bool IsOpen() override;
-	void DrawSprite() override;
+	void DrawSprite(Sprite* s) override;
 
 private:
 	SDL_Window* window;

@@ -17,7 +17,7 @@ bool WindowSDL::IsOpen()
 	return window;
 }
 
-void WindowSDL::DrawSprite()
+void WindowSDL::DrawSprite(Sprite* s)
 {
 	const SDL_Rect a = { 50, 50, 100, 100 };
 	SDL_FillRect(winSurface, &a, SDL_MapRGB(winSurface->format, 255, 90, 120));

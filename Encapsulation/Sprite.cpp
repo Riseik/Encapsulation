@@ -8,6 +8,20 @@ void Sprite::GetData()
 {
 }
 
-void Sprite::SetPosition()
+void Sprite::SetPosition(int x, int y)
 {
+	
+}
+
+void Sprite::SetSpeed()
+{
+}
+
+void Sprite::SetRad()
+{
+}
+
+Ball* Sprite::GetBall()
+{
+	return ball;
 }

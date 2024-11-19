@@ -13,11 +13,13 @@ int main()
     Sprite* s = new Sprite();
 
     s->LoadSprite();
-    s->SetPosition();
+    s->SetRad();
+    s->SetPosition(std::rand() % 601, std::rand() % 601);
+
 
     while (win->IsOpen()) {
         win->Clear();
-        win->DrawSprite();
+        win->DrawSprite(s);
     }
 
     return 0;
