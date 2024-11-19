@@ -147,6 +147,8 @@
     <ClInclude Include="WindowSDL.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\Logo_SCP_Foundation.bmp" />
+    <Image Include="..\SCP.bmp" />
     <Image Include="..\SCP.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

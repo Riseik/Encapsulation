@@ -1,6 +1,6 @@
 #pragma once
 #include "Window.h"
-#include "Sprite.h"
+#include "SpriteSDL.h"
 #include "SDL2/SDL.h"
 
 class WindowSDL : public Window
@@ -14,5 +14,6 @@ class WindowSDL : public Window
 private:
 	SDL_Window* window;
 	SDL_Surface* winSurface;
+	SpriteSDL sprite;
 };
 

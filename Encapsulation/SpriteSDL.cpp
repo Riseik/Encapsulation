@@ -2,5 +2,10 @@
 
 void SpriteSDL::LoadSprite()
 {
-	tmpSurface = SDL_LoadBMP("../SCP.png");
+	tmpSurface = SDL_LoadBMP("../Logo_SCP_Foundation.bmp");
+	if (tmpSurface == NULL)
+	{
+		std::cout << "erreur";
+	}
+
 }

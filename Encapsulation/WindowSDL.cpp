@@ -5,6 +5,7 @@ void WindowSDL::CreateWindow(const char* name, int height, int width)
 	SDL_Init(SDL_INIT_EVERYTHING);
 	window = SDL_CreateWindow(name, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, height, width, SDL_WINDOW_SHOWN);
 	winSurface = SDL_GetWindowSurface(window);
+	sprite.LoadSprite();
 }
 
 void WindowSDL::Clear()
@@ -19,8 +20,9 @@ bool WindowSDL::IsOpen()
 
 void WindowSDL::DrawSprite(Sprite* s)
 {
-	const SDL_Rect a = { 50, 50, 100, 100 };
-	SDL_FillRect(winSurface, &a, SDL_MapRGB(winSurface->format, 255, 90, 120));
+	SDL_BlitSurface(sprite.tmpSurface, NULL, winSurface, NULL);
+	//const SDL_Rect a = { 50, 50, 100, 100 };
+	//SDL_FillRect(sprite.tmpSurface, &a, SDL_MapRGB(winSurface->format, 255, 255, 255));
 }
 
 
