@@ -13,15 +13,17 @@ typedef struct Ball {
 class Sprite
 {
 public:
-	virtual void LoadSprite();
-	virtual void GetData();
+	virtual void LoadSprite(std::string path)=0;
+	virtual void* GetData() = 0;
 	virtual void SetPosition(int x, int y);
-	virtual void SetSpeed();
+	virtual void SetSpeed(float x, float y);
 	virtual void SetRad();
+	virtual void Move();
+	virtual void CheckColision();
 
 	Ball* GetBall();
 
-	Ball* ball;
+	Ball* ball = new Ball;
 
 protected:
 

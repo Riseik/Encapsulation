@@ -12,6 +12,5 @@ public:
 
 private:
 	Texture2D texBall;
-	float scale = 0.02;
 };
 

@@ -56,9 +56,18 @@
     <ClInclude Include="SpriteRaylib.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="const.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\SCP.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="..\Logo_SCP_Foundation.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="..\SCP.bmp">
       <Filter>Fichiers de ressources</Filter>
     </Image>
   </ItemGroup>

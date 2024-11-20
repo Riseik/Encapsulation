@@ -139,6 +139,7 @@
     <ClCompile Include="WindowSDL.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="const.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteRaylib.h" />
     <ClInclude Include="SpriteSDL.h" />

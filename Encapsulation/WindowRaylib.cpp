@@ -2,6 +2,7 @@
 #include "raylib.h"
 #include <iostream>
 #include <vector>
+#include "const.h"
 
 void WindowRaylib::CreateWindow(const char* name, int height, int width)
 {
@@ -20,15 +21,12 @@ bool WindowRaylib::IsOpen()
 
 void WindowRaylib::Clear()
 {
-	ClearBackground(RAYWHITE);
+	ClearBackground(GRAY);
 }
 
 void WindowRaylib::DrawSprite(Sprite* s)
 {
-	if (s == nullptr || s->GetBall() == nullptr) {
-		return;
-	}
 	BeginDrawing();
-	DrawTextureEx(texBall, s->GetBall()->pos, 0, scale, MAROON);
+	DrawTextureEx(texBall, s->GetBall()->pos, 0, SPRITE_SCALE, MAROON);
 	EndDrawing();
 }

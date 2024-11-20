@@ -3,22 +3,25 @@
 #include <iostream>
 #include "WindowSDL.h"
 #include "WindowRaylib.h"
+#include "SpriteRaylib.h"
 
 int main()
 {
-    Window* win = new WindowSDL();
+    Window* win = new WindowRaylib();
 
-    win->CreateWindow("test", 600, 600);
+    win->CreateWindow("test", WINDOW_HEIGHT, WINDOW_WIDTH);
 
-    Sprite* s = new Sprite();
+    Sprite* s = win->CreateSprite();
 
     s->LoadSprite();
     s->SetRad();
-    s->SetPosition(std::rand() % 601, std::rand() % 601);
+    s->SetPosition(GetRandomValue(0, WINDOW_WIDTH), GetRandomValue(0, WINDOW_HEIGHT));
+    s->SetSpeed((float)GetRandomValue(MIN_BALL_SPEED, MAX_BALL_SPEED) / 100, (float)GetRandomValue(MIN_BALL_SPEED, MAX_BALL_SPEED) / 100);
 
 
     while (win->IsOpen()) {
         win->Clear();
+        s->Move();
         win->DrawSprite(s);
     }
 

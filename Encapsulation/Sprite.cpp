@@ -13,11 +13,19 @@ void Sprite::SetPosition(int x, int y)
 	
 }
 
-void Sprite::SetSpeed()
+void Sprite::SetSpeed(float x, float y)
 {
 }
 
 void Sprite::SetRad()
+{
+}
+
+void Sprite::Move()
+{
+}
+
+void Sprite::CheckColision()
 {
 }
 
