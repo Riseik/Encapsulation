@@ -10,9 +10,12 @@ class WindowSDL : public Window
 	void Clear() override;
 	bool IsOpen() override;
 	void DrawSprite(Sprite* s) override;
+	Sprite* CreateSprite() override;
+
+	SDL_Renderer* getRenderer() const { return render; }
 
 private:
 	SDL_Window* window;
-	SDL_Surface* winSurface;
+	SDL_Renderer* render;
 };
 

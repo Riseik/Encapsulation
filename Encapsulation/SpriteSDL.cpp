@@ -1,11 +1,14 @@
 #include "SpriteSDL.h"
+#include "WindowSDL.h"
 
-void SpriteSDL::LoadSprite(std::string path)
+void SpriteSDL::LoadSprite(const char* path)
 {
-	tmpSurface = SDL_LoadBMP("../Logo_SCP_Foundation.bmp");
-	if (tmpSurface == NULL)
-	{
-		std::cout << "erreur";
-	}
+	extern Window* win;
+	tmpSurface = IMG_Load(path);
+	Img = SDL_CreateTextureFromSurface(((WindowSDL*) win)->getRenderer(), tmpSurface);
+}
 
+void* SpriteSDL::GetData()
+{
+	return Img;
 }

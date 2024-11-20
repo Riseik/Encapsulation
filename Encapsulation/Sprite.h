@@ -13,7 +13,7 @@ struct Ball {
 class Sprite
 {
 public:
-	virtual void LoadSprite(std::string path)=0;
+	virtual void LoadSprite(const char* path)=0;
 	virtual void* GetData() = 0;
 	virtual void SetPosition(int x, int y);
 	virtual void SetSpeed(float x, float y);

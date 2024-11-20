@@ -5,9 +5,11 @@
 #include "WindowRaylib.h"
 #include "SpriteRaylib.h"
 
+Window* win;
+
 int main()
 {
-    Window* win = new WindowRaylib();
+    win = new WindowSDL();
 
     win->CreateWindow("test", WINDOW_HEIGHT, WINDOW_WIDTH);
 

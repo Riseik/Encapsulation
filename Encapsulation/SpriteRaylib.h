@@ -6,7 +6,7 @@
 class SpriteRaylib : public Sprite
 {
 public:
-	void LoadSprite(std::string path) override;
+	void LoadSprite(const char* path) override;
 	void* GetData() override;
 	void SetRad() override;
 	void SetPosition(int x, int y) override;

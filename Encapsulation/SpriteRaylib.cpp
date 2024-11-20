@@ -3,9 +3,9 @@
 #include <iostream>
 #include <vector>
 
-void SpriteRaylib::LoadSprite(std::string path)
+void SpriteRaylib::LoadSprite(const char* path)
 {
-	texBall = LoadTexture(path.c_str());
+	texBall = LoadTexture(path);
 }
 
 void* SpriteRaylib::GetData()

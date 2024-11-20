@@ -1,6 +1,6 @@
 #include "Sprite.h"
 
-void Sprite::LoadSprite(std::string path)
+void Sprite::LoadSprite(const char* path)
 {
 }
 
