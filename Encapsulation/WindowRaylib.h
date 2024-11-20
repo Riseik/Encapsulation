@@ -9,8 +9,9 @@ public:
 	bool IsOpen() override;
 	void Clear() override;
 	void DrawSprite(Sprite* s) override;
+	Sprite* CreateSprite() override;
 
 private:
-	Texture2D texBall;
+
 };
 

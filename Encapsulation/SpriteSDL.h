@@ -7,7 +7,7 @@
 class SpriteSDL : public Sprite
 {
 public :
-	void LoadSprite() override;
+	void LoadSprite(std::string path) override;
 	SDL_Surface* tmpSurface;
 };
 

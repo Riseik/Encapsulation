@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 
-typedef struct Ball {
+struct Ball {
 	Vector2 pos;
 	Vector2 speed;
 	float rad;

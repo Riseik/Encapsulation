@@ -1,11 +1,12 @@
 #include "Sprite.h"
 
-void Sprite::LoadSprite()
+void Sprite::LoadSprite(std::string path)
 {
 }
 
-void Sprite::GetData()
+void* Sprite::GetData()
 {
+	return 0;
 }
 
 void Sprite::SetPosition(int x, int y)

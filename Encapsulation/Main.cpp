@@ -13,7 +13,7 @@ int main()
 
     Sprite* s = win->CreateSprite();
 
-    s->LoadSprite();
+    s->LoadSprite(IMAGE_PATH);
     s->SetRad();
     s->SetPosition(GetRandomValue(0, WINDOW_WIDTH), GetRandomValue(0, WINDOW_HEIGHT));
     s->SetSpeed((float)GetRandomValue(MIN_BALL_SPEED, MAX_BALL_SPEED) / 100, (float)GetRandomValue(MIN_BALL_SPEED, MAX_BALL_SPEED) / 100);

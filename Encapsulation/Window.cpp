@@ -1,8 +1,5 @@
 #include "Window.h"
 
-void Window::Init()
-{
-}
 
 void Window::CreateWindow(const char*, int, int)
 {

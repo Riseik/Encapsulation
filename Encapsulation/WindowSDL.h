@@ -14,6 +14,5 @@ class WindowSDL : public Window
 private:
 	SDL_Window* window;
 	SDL_Surface* winSurface;
-	SpriteSDL sprite;
 };
 

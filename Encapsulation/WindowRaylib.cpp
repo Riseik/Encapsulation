@@ -1,4 +1,5 @@
 #include "WindowRaylib.h"
+#include "SpriteRaylib.h"
 #include "raylib.h"
 #include <iostream>
 #include <vector>
@@ -10,8 +11,6 @@ void WindowRaylib::CreateWindow(const char* name, int height, int width)
 
 	int frameCounter = 0;
 	SetTargetFPS(60);
-
-	texBall = LoadTexture("../SCP.png");
 }
 
 bool WindowRaylib::IsOpen()
@@ -27,6 +26,11 @@ void WindowRaylib::Clear()
 void WindowRaylib::DrawSprite(Sprite* s)
 {
 	BeginDrawing();
-	DrawTextureEx(texBall, s->GetBall()->pos, 0, SPRITE_SCALE, MAROON);
+	DrawTextureEx(*((Texture2D*)s->GetData()), s->GetBall()->pos, 0, SPRITE_SCALE, MAROON);
 	EndDrawing();
+}
+
+Sprite* WindowRaylib::CreateSprite()
+{
+	return new SpriteRaylib;
 }

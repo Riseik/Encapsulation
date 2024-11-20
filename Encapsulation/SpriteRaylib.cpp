@@ -3,9 +3,14 @@
 #include <iostream>
 #include <vector>
 
-void SpriteRaylib::LoadSprite()
+void SpriteRaylib::LoadSprite(std::string path)
 {
-	texBall = LoadTexture("../SCP.png");
+	texBall = LoadTexture(path.c_str());
+}
+
+void* SpriteRaylib::GetData()
+{
+	return &texBall;
 }
 
 void SpriteRaylib::SetRad()
