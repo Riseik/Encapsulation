@@ -15,6 +15,7 @@ class Sprite
 public:
 	virtual void LoadSprite(const char* path)=0;
 	virtual void* GetData() = 0;
+	virtual Vector4* GetColor() = 0;
 	virtual void SetPosition(int x, int y);
 	virtual void SetSpeed(float x, float y);
 	virtual void SetRad();

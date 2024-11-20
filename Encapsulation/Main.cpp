@@ -23,6 +23,7 @@ int main()
 
     while (win->IsOpen()) {
         win->Clear();
+        if (IsKeyPressed(KEY_ENTER)) win->CreateSprite();
         s->Move();
         win->DrawSprite(s);
     }

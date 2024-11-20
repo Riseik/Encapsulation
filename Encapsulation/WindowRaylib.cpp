@@ -26,7 +26,7 @@ void WindowRaylib::Clear()
 void WindowRaylib::DrawSprite(Sprite* s)
 {
 	BeginDrawing();
-	DrawTextureEx(*((Texture2D*)s->GetData()), s->GetBall()->pos, 0, SPRITE_SCALE, MAROON);
+	DrawTextureEx(*((Texture2D*)s->GetData()), s->GetBall()->pos, 0, SPRITE_SCALE, *((Color*)s->GetColor()));
 	EndDrawing();
 }
 
