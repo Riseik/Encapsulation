@@ -1,6 +1,7 @@
 #pragma once
 
 #include "raylib.h"
+#include "const.h"
 #include <iostream>
 #include <vector>
 
@@ -13,13 +14,15 @@ struct Ball {
 class Sprite
 {
 public:
-	virtual void LoadSprite(const char* path)=0;
+	virtual void LoadSprite(const char* path) = 0;
 	virtual void* GetData() = 0;
-	virtual void SetPosition(int x, int y);
-	virtual void SetSpeed(float x, float y);
+	virtual void* GetSurface();
 	virtual void SetRad();
-	virtual void Move();
-	virtual void CheckColision();
+
+	void SetPosition(int x, int y);
+	void SetSpeed(float x, float y);
+	void Move();
+	void CheckColision();
 
 	Ball* GetBall();
 

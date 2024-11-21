@@ -9,6 +9,7 @@ class SpriteSDL : public Sprite
 public :
 	void LoadSprite(const char* path) override;
 	void* GetData() override;
+	void* GetSurface() override;
 	void SetRad() override;
 
 	SDL_Surface* tmpSurface;

@@ -19,7 +19,7 @@ bool WindowSDL::IsOpen()
 
 void WindowSDL::DrawSprite(Sprite* s)
 {
-	const SDL_Rect a = { 0, 0, 100, 100 };
+	const SDL_Rect a = { s->GetBall()->pos.x, s->GetBall()->pos.y, ((SDL_Surface*)s->GetSurface())->h * SPRITE_SCALE, ((SDL_Surface*)s->GetSurface())->w * SPRITE_SCALE};
 
 	SDL_RenderClear(render);
 	SDL_SetRenderDrawColor(render, 255, 255, 255, 255);

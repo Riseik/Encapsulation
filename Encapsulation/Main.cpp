@@ -1,6 +1,8 @@
 #define SDL_MAIN_HANDLED
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "WindowSDL.h"
 #include "WindowRaylib.h"
 #include "SpriteRaylib.h"
@@ -9,7 +11,10 @@ Window* win;
 
 int main()
 {
-    win = new WindowSDL();
+    srand(time(0));
+
+
+    win = new WindowRaylib();
 
     win->CreateWindow("test", WINDOW_HEIGHT, WINDOW_WIDTH);
 
@@ -17,8 +22,8 @@ int main()
 
     s->LoadSprite(IMAGE_PATH);
     s->SetRad();
-    s->SetPosition(GetRandomValue(0, WINDOW_WIDTH), GetRandomValue(0, WINDOW_HEIGHT));
-    s->SetSpeed((float)GetRandomValue(MIN_BALL_SPEED, MAX_BALL_SPEED) / 100, (float)GetRandomValue(MIN_BALL_SPEED, MAX_BALL_SPEED) / 100);
+    s->SetPosition(std::rand() % WINDOW_WIDTH, std::rand() % WINDOW_HEIGHT);
+    s->SetSpeed((float)(std::rand() % (MAX_BALL_SPEED - MIN_BALL_SPEED) + MIN_BALL_SPEED) / 100, (float)(std::rand() % (MAX_BALL_SPEED - MIN_BALL_SPEED) + MIN_BALL_SPEED) / 100);
 
 
     while (win->IsOpen()) {
