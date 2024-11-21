@@ -39,7 +39,7 @@ int main()
     {
         (RaylibSwitch) ? title = "Encapsulation Raylib" : title = "Encapsulation SDL";
         win->CreateWindow(title, WINDOW_HEIGHT, WINDOW_WIDTH);
-        BallGeneration(5);
+        BallGeneration(10);
 
         while (win->IsOpen())
         {
