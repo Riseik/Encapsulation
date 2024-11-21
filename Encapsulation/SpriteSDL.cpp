@@ -12,3 +12,8 @@ void* SpriteSDL::GetData()
 {
 	return Img;
 }
+
+void SpriteSDL::SetRad()
+{
+	ball->rad = tmpSurface->h * SPRITE_SCALE / 2;
+}
