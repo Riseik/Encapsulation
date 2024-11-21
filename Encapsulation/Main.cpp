@@ -15,10 +15,12 @@ int main()
 
     bool RaylibSwitch = false;
     win = new WindowSDL();
+    const char* title = "";
 
     while (true)
     {
-        win->CreateWindow("Encapsulation", WINDOW_HEIGHT, WINDOW_WIDTH);
+        (RaylibSwitch) ? title = "Encapsulation Raylib" : title = "Encapsulation SDL";
+        win->CreateWindow(title, WINDOW_HEIGHT, WINDOW_WIDTH);
 
         Sprite* s = win->CreateSprite();
 
