@@ -29,7 +29,7 @@ void WindowRaylib::Draw(Sprite* s)
 {
 	BeginDrawing();
 	std::string fpsText = "FPS Counter : " + std::to_string(GetFPS());
-	DrawTextEx(font, fpsText.c_str(), FONT_POSITION, FONT_SIZE, FONT_SPACING, MAROON);
+	DrawTextEx(font, fpsText.c_str(), FPS_TEXT_POSITION, FPS_TEXT_SIZE, FPS_TEXT_SPACING, MAROON);
 	DrawTextureEx(*((Texture2D*)s->GetData()), s->GetBall()->pos, 0, SPRITE_SCALE, MAROON);
 	EndDrawing();
 }
