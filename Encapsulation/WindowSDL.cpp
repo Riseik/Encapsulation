@@ -52,7 +52,7 @@ int WindowSDL::CalculFps(Uint32 Start)
 		return FPS_CAP;
 	}
 	else {
-		return 1000 / frameTime;
+		return frameTime != 0 ? 1000 / frameTime : 0;
 	}
 }
 
@@ -69,7 +69,19 @@ bool WindowSDL::Event()
 				return true;
 			}
 		}
-		return false;
+		if (event.type == SDL_WINDOWEVENT)
+		{
+			switch (event.window.event) {
+
+			case SDL_WINDOWEVENT_CLOSE:
+				open = false;
+				DestroyWindow();
+				break;
+
+			default:
+				break;
+			}
+		}
 	}
 }
 
@@ -78,6 +90,11 @@ void WindowSDL::DestroyWindow()
 	SDL_DestroyRenderer(render);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
+}
+
+bool WindowSDL::CheckCloseWindow()
+{
+	return open;
 }
 
 

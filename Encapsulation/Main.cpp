@@ -17,7 +17,7 @@ int main()
     win = new WindowSDL();
     const char* title = "";
 
-    while (true)
+    while (win->CheckCloseWindow())
     {
         (RaylibSwitch) ? title = "Encapsulation Raylib" : title = "Encapsulation SDL";
         win->CreateWindow(title, WINDOW_HEIGHT, WINDOW_WIDTH);

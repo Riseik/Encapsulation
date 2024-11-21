@@ -12,10 +12,12 @@ public:
 	Sprite* CreateSprite() override;
 	bool Event() override;
 	void DestroyWindow() override;
+	bool CheckCloseWindow() override;
 
 
 private:
 	Font font;
+	bool open = true;
 
 };
 

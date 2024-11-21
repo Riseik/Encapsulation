@@ -13,6 +13,7 @@ class WindowSDL : public Window
 	void Draw(Sprite* s) override;
 	bool Event() override;
 	void DestroyWindow() override;
+	bool CheckCloseWindow() override;
 
 	void InitVariable();
 	void DisplayText(const char*);
@@ -38,5 +39,7 @@ private:
 	SDL_Rect textPos;
 	Uint32 frameStart;
 	SDL_Event event;
+
+	bool open = true;
 };
 

@@ -14,6 +14,7 @@ public:
 	virtual void SwitchLanguage();
 	virtual bool Event() = 0;
 	virtual void DestroyWindow() = 0;
+	virtual bool CheckCloseWindow() = 0;
 
 protected:
 

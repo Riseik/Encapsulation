@@ -16,7 +16,6 @@ void* Sprite::GetSurface()
 
 void Sprite::SetPosition(int x, int y)
 {
-	std::cout << x << " ||| " << y << std::endl;
 
 	if (x - ball->rad <= 0) x = ball->rad + 1;
 	if (x - ball->rad >= WINDOW_WIDTH) x = WINDOW_WIDTH - 1;
@@ -29,7 +28,6 @@ void Sprite::SetPosition(int x, int y)
 
 void Sprite::SetSpeed(float x, float y)
 {
-	std::cout << x << " ||| " << y << std::endl;
 	ball->speed = { x, y };
 }
 
