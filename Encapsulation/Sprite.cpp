@@ -9,6 +9,11 @@ void* Sprite::GetData()
 	return 0;
 }
 
+Vector4* Sprite::GetColor()
+{
+	return nullptr;
+}
+
 void Sprite::SetPosition(int x, int y)
 {
 	
