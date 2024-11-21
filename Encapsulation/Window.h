@@ -11,6 +11,7 @@ public:
 	virtual void Clear() = 0;
 	virtual void Draw(Sprite* s) = 0;
 	virtual Sprite* CreateSprite() = 0;
+	virtual void SwitchLanguage();
 
 protected:
 
