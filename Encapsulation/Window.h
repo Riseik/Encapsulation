@@ -12,6 +12,8 @@ public:
 	virtual void Draw(Sprite* s) = 0;
 	virtual Sprite* CreateSprite() = 0;
 	virtual void SwitchLanguage();
+	virtual bool Event() = 0;
+	virtual void DestroyWindow() = 0;
 
 protected:
 

@@ -36,6 +36,15 @@ void WindowRaylib::Draw(Sprite* s)
 	EndDrawing();
 }
 
+bool WindowRaylib::Event()
+{
+	return false;
+}
+
+void WindowRaylib::DestroyWindow()
+{
+}
+
 Sprite* WindowRaylib::CreateSprite()
 {
 	return new SpriteRaylib;

@@ -10,6 +10,9 @@ public:
 	void Clear() override;
 	void Draw(Sprite* s) override;
 	Sprite* CreateSprite() override;
+	bool Event() override;
+	void DestroyWindow() override;
+
 
 private:
 	Font font;

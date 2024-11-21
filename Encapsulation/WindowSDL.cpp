@@ -7,11 +7,13 @@ void WindowSDL::CreateWindow(const char* name, int height, int width)
 	render = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
 	TTF_Init();
+	InitVariable();
 }
 
 void WindowSDL::Clear()
 {
-	SDL_UpdateWindowSurface(window);
+	SDL_FreeSurface(textSurface);
+	SDL_RenderClear(render);
 }
 
 bool WindowSDL::IsOpen()
@@ -21,25 +23,26 @@ bool WindowSDL::IsOpen()
 
 void WindowSDL::Draw(Sprite* s)
 {
-	Uint32 frameStart = SDL_GetTicks();
-	const SDL_Rect a = { s->GetBall()->pos.x, s->GetBall()->pos.y, ((SDL_Surface*)s->GetSurface())->h * SPRITE_SCALE, ((SDL_Surface*)s->GetSurface())->w * SPRITE_SCALE};
-	const SDL_Rect fpsPos = {FPS_TEXT_POSITION_X, FPS_TEXT_POSITION_Y, FPS_COUNTER_SDL_TEXT_WIDTH, SDL_FONT_HEIGHT };
-	const SDL_Rect textPos = { FPS_TEXT_POSITION_X, FPS_TEXT_POSITION_Y + 550, FPS_COUNTER_SDL_TEXT_WIDTH + 100, SDL_FONT_HEIGHT };
+	frameStart = SDL_GetTicks();
+	spritePos = { (int)s->GetBall()->pos.x, (int)s->GetBall()->pos.y, (int)(((SDL_Surface*)s->GetSurface())->h * SPRITE_SCALE), (int)(((SDL_Surface*)s->GetSurface())->w * SPRITE_SCALE)};
 
-
-	SDL_RenderClear(render);
 	SDL_SetRenderDrawColor(render, 130, 130, 130, 255);
-	SDL_RenderCopy(render, (SDL_Texture*)s->GetData(), NULL, &a);
-	std::string fps = std::to_string(CalculFps(frameStart));
-
+	SDL_RenderCopy(render, (SDL_Texture*)s->GetData(), NULL, &spritePos);
+	fps = std::to_string(CalculFps(frameStart));
+	
 	DisplayText(("fps  counter  :  " + fps).c_str());
 	SDL_RenderCopy(render, textTexture, NULL, &fpsPos);
-
+	
 	DisplayText("'SPACE'  to  switch  to  Raylib");
 	SDL_RenderCopy(render, textTexture, NULL, &textPos);
-
+	
 	SDL_RenderPresent(render);
+	SDL_UpdateWindowSurface(window);
+
+
+
 }
+
 
 int WindowSDL::CalculFps(Uint32 Start)
 {
@@ -53,15 +56,45 @@ int WindowSDL::CalculFps(Uint32 Start)
 	}
 }
 
-void WindowSDL::DisplayText(const char* text)
+
+bool WindowSDL::Event()
+{
+	while (SDL_PollEvent(&event))
+	{
+		if (event.type == SDL_KEYDOWN)
+		{
+			if (event.key.keysym.sym == SDLK_SPACE)
+			{
+				printf("Barre d'espace appuyée!\n");
+				return true;
+			}
+		}
+		return false;
+	}
+}
+
+void WindowSDL::DestroyWindow()
+{
+	SDL_DestroyRenderer(render);
+	SDL_DestroyWindow(window);
+	SDL_Quit();
+}
+
+
+void WindowSDL::InitVariable()
 {
 	font = TTF_OpenFont("../Daydream.ttf", 24);
+	fpsPos = { FPS_TEXT_POSITION_X, FPS_TEXT_POSITION_Y, FPS_COUNTER_SDL_TEXT_WIDTH, SDL_FONT_HEIGHT };
+	textPos = { FPS_TEXT_POSITION_X, FPS_TEXT_POSITION_Y + 550, FPS_COUNTER_SDL_TEXT_WIDTH + 100, SDL_FONT_HEIGHT };
+}
+
+void WindowSDL::DisplayText(const char* text)
+{
 	textSurface = TTF_RenderText_Solid(font, text, fontColor);
 	textTexture = SDL_CreateTextureFromSurface(render, textSurface);
 }
 
 Sprite* WindowSDL::CreateSprite()
 {
-
 	return new SpriteSDL;
 }
