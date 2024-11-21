@@ -14,7 +14,7 @@ int main()
     srand(time(0));
 
 
-    win = new WindowSDL();
+    win = new WindowRaylib();
 
     win->CreateWindow("test", WINDOW_HEIGHT, WINDOW_WIDTH);
 
