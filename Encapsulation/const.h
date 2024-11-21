@@ -5,7 +5,7 @@
 
 #define SPRITE_SCALE 0.04f
 
-#define MIN_BALL_SPEED 50
+#define MIN_BALL_SPEED -500
 #define MAX_BALL_SPEED 500
 
 #define IMAGE_PATH "../SCP.png"

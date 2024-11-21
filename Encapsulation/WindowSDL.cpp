@@ -25,9 +25,9 @@ void WindowSDL::Draw(std::vector<Sprite*> s)
 {
 	frameStart = SDL_GetTicks();
 
-	spritePos = { (int)s->GetBall()->pos.x, (int)s->GetBall()->pos.y, (int)(((SDL_Surface*)s->GetSurface())->h * SPRITE_SCALE), (int)(((SDL_Surface*)s->GetSurface())->w * SPRITE_SCALE)};
-	SDL_SetRenderDrawColor(render, 130, 130, 130, 255);
-	SDL_RenderCopy(render, (SDL_Texture*)s->GetData(), NULL, &spritePos);
+//	spritePos = { (int)s->GetBall()->pos.x, (int)s->GetBall()->pos.y, (int)(((SDL_Surface*)s->GetSurface())->h * SPRITE_SCALE), (int)(((SDL_Surface*)s->GetSurface())->w * SPRITE_SCALE)};
+//	SDL_SetRenderDrawColor(render, 130, 130, 130, 255);
+//	SDL_RenderCopy(render, (SDL_Texture*)s->GetData(), NULL, &spritePos);
 
 	fps = std::to_string(CalculFps(frameStart));
 	

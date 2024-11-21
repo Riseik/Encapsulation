@@ -14,10 +14,6 @@ void Window::Clear()
 {
 }
 
-void Window::Draw(Sprite* s)
-{
-}
-
 void Window::SwitchLanguage()
 {
 }

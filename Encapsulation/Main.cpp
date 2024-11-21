@@ -30,14 +30,14 @@ int main()
     srand(time(0));
 
     bool RaylibSwitch = false;
-    win = new WindowSDL();
+    win = new WindowRaylib();
     const char* title = "";
 
     while (win->CheckCloseWindow())
     {
         (RaylibSwitch) ? title = "Encapsulation Raylib" : title = "Encapsulation SDL";
         win->CreateWindow(title, WINDOW_HEIGHT, WINDOW_WIDTH);
-        BallGeneration(2);
+        BallGeneration(5);
 
         while (win->IsOpen())
         {
@@ -46,8 +46,8 @@ int main()
             for (Sprite* s : spriteList)
             {
                 s->Move();
-                win->Draw(s);
             }
+            win->Draw(spriteList);
 
             if (win->Event())
             {
