@@ -11,10 +11,12 @@ class WindowSDL : public Window
 	void Clear() override;
 	bool IsOpen() override;
 	void Draw(Sprite* s) override;
+
+
 	void DisplayText(const char*);
 	int CalculFps(Uint32);
-	Sprite* CreateSprite() override;
 
+	Sprite* CreateSprite() override;
 	SDL_Renderer* getRenderer() const { return render; }
 	float frameDelay = 1000 / FPS_CAP;
 
@@ -26,6 +28,6 @@ private:
 	//SDL_Rect* textPos;
 
 	TTF_Font* font;
-	SDL_Color fontColor = { 255, 0, 0, 255 };
+	SDL_Color fontColor = { 0, 121, 241, 255 };
 };
 
