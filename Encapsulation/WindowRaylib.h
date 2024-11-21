@@ -8,10 +8,11 @@ public:
 	void CreateWindow(const char*, int, int) override;
 	bool IsOpen() override;
 	void Clear() override;
-	void DrawSprite(Sprite* s) override;
+	void Draw(Sprite* s) override;
 	Sprite* CreateSprite() override;
 
 private:
+	Font font;
 
 };
 

@@ -14,7 +14,7 @@ int main()
     srand(time(0));
 
 
-    win = new WindowSDL();
+    win = new WindowRaylib();
 
     win->CreateWindow("test", WINDOW_HEIGHT, WINDOW_WIDTH);
 
@@ -30,7 +30,7 @@ int main()
         win->Clear();
         if (IsKeyPressed(KEY_ENTER)) win->CreateSprite();
         s->Move();
-        win->DrawSprite(s);
+        win->Draw(s);
     }
 
     return 0;

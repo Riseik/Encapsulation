@@ -11,3 +11,8 @@
 #define IMAGE_PATH "../SCP.png"
 
 #define FPS_CAP 60
+
+#define FONT_PATH "../Daydream.ttf"
+#define FONT_POSITION { 20, 20 }
+#define FONT_SIZE 10
+#define FONT_SPACING 2

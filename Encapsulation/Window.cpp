@@ -14,6 +14,6 @@ void Window::Clear()
 {
 }
 
-void Window::DrawSprite(Sprite* s)
+void Window::Draw(Sprite* s)
 {
 }

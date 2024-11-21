@@ -17,7 +17,7 @@ bool WindowSDL::IsOpen()
 	return window;
 }
 
-void WindowSDL::DrawSprite(Sprite* s)
+void WindowSDL::Draw(Sprite* s)
 {
 	Uint32 frameStart = SDL_GetTicks();
 	const SDL_Rect a = { s->GetBall()->pos.x, s->GetBall()->pos.y, ((SDL_Surface*)s->GetSurface())->h * SPRITE_SCALE, ((SDL_Surface*)s->GetSurface())->w * SPRITE_SCALE};

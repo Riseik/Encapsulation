@@ -9,6 +9,8 @@ void WindowRaylib::CreateWindow(const char* name, int height, int width)
 {
 	InitWindow(width, height, name);
 
+	font = LoadFont(FONT_PATH);
+
 	int frameCounter = 0;
 	SetTargetFPS(FPS_CAP);
 }
@@ -23,9 +25,11 @@ void WindowRaylib::Clear()
 	ClearBackground(GRAY);
 }
 
-void WindowRaylib::DrawSprite(Sprite* s)
+void WindowRaylib::Draw(Sprite* s)
 {
 	BeginDrawing();
+	std::string fpsText = "FPS Counter : " + std::to_string(GetFPS());
+	DrawTextEx(font, fpsText.c_str(), FONT_POSITION, FONT_SIZE, FONT_SPACING, MAROON);
 	DrawTextureEx(*((Texture2D*)s->GetData()), s->GetBall()->pos, 0, SPRITE_SCALE, MAROON);
 	EndDrawing();
 }
