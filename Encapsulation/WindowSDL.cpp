@@ -42,8 +42,6 @@ void WindowSDL::Draw(std::vector<Sprite*> spriteList)
 	SDL_RenderPresent(render);
 	SDL_UpdateWindowSurface(window);
 
-	SDL_Delay(50);
-
 }
 
 

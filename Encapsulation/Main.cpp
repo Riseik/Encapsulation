@@ -12,6 +12,8 @@ std::vector<Sprite*> spriteList;
 
 void BallGeneration(int amount)
 {
+    spriteList.clear();
+
     for (int i = 0; i < amount; i++)
     {
         Sprite* s = win->CreateSprite();
@@ -48,7 +50,6 @@ int main()
             {
                 s->Move();
             }
-            win->Draw(spriteList);
 
             win->Draw(spriteList);
 
