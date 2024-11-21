@@ -30,7 +30,7 @@ int main()
     srand(time(0));
 
     bool RaylibSwitch = false;
-    win = new WindowRaylib();
+    win = new WindowSDL();
     const char* title = "";
 
     while (win->CheckCloseWindow())
@@ -43,10 +43,13 @@ int main()
         {
 
             win->Clear();
+
             for (Sprite* s : spriteList)
             {
                 s->Move();
             }
+            win->Draw(spriteList);
+
             win->Draw(spriteList);
 
             if (win->Event())

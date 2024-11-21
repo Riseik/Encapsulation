@@ -21,21 +21,23 @@ bool WindowSDL::IsOpen()
 	return window;
 }
 
-void WindowSDL::Draw(std::vector<Sprite*> s)
+void WindowSDL::Draw(std::vector<Sprite*> spriteList)
 {
 	frameStart = SDL_GetTicks();
+	for (Sprite* s : spriteList)
+	{
+		spritePos = { (int)s->GetBall()->pos.x, (int)s->GetBall()->pos.y, (int)(((SDL_Surface*)s->GetSurface())->h * SPRITE_SCALE), (int)(((SDL_Surface*)s->GetSurface())->w * SPRITE_SCALE) };
+		SDL_RenderCopy(render, (SDL_Texture*)s->GetData(), NULL, &spritePos);
+	}
 
-//	spritePos = { (int)s->GetBall()->pos.x, (int)s->GetBall()->pos.y, (int)(((SDL_Surface*)s->GetSurface())->h * SPRITE_SCALE), (int)(((SDL_Surface*)s->GetSurface())->w * SPRITE_SCALE)};
-//	SDL_SetRenderDrawColor(render, 130, 130, 130, 255);
-//	SDL_RenderCopy(render, (SDL_Texture*)s->GetData(), NULL, &spritePos);
-
-	fps = std::to_string(CalculFps(frameStart));
-	
-	DisplayText(("fps  counter  :  " + fps).c_str());
-	SDL_RenderCopy(render, textTexture, NULL, &fpsPos);
+	SDL_SetRenderDrawColor(render, 130, 130, 130, 255);
 	
 	DisplayText("'SPACE'  to  switch  to  Raylib");
 	SDL_RenderCopy(render, textTexture, NULL, &textPos);
+
+	fps = std::to_string(CalculFps(frameStart));
+	DisplayText(("fps  counter  :  " + fps).c_str());
+	SDL_RenderCopy(render, textTexture, NULL, &fpsPos);
 	
 	SDL_RenderPresent(render);
 	SDL_UpdateWindowSurface(window);
@@ -48,7 +50,7 @@ void WindowSDL::Draw(std::vector<Sprite*> s)
 int WindowSDL::CalculFps(Uint32 Start)
 {
 	int frameTime = SDL_GetTicks() - Start;
-	if (Start > frameTime) {
+	if (frameDelay > frameTime) {
 		SDL_Delay(frameDelay - frameTime);
 		return FPS_CAP;
 	}
