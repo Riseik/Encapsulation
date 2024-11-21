@@ -18,4 +18,7 @@
 #define FPS_TEXT_POSITION_Y 20
 #define FPS_TEXT_SIZE 10
 #define FPS_TEXT_SPACING 2
-static constexpr int coucou = 20;
+
+#define SWITCH_TEXT_POSITION { 20, WINDOW_WIDTH - 20 }
+#define SWITCH_TEXT_SIZE 10
+#define SWITCH_TEXT_SPACING 2

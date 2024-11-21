@@ -31,6 +31,7 @@ void WindowRaylib::Draw(Sprite* s)
 	std::string fpsText = "FPS Counter : " + std::to_string(GetFPS());
 	Vector2 pos = { FPS_TEXT_POSITION_X, FPS_TEXT_POSITION_Y };
 	DrawTextEx(font, fpsText.c_str(), pos, FPS_TEXT_SIZE, FPS_TEXT_SPACING, MAROON);
+	DrawTextEx(font, "'SPACE' to switch to SDL", SWITCH_TEXT_POSITION, SWITCH_TEXT_SIZE, SWITCH_TEXT_SPACING, MAROON);
 	DrawTextureEx(*((Texture2D*)s->GetData()), s->GetBall()->pos, 0, SPRITE_SCALE, MAROON);
 	EndDrawing();
 }
