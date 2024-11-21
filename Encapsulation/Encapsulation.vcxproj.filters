@@ -71,4 +71,12 @@
       <Filter>Fichiers de ressources</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\Daydream.ttf">
+      <Filter>Fichiers de ressources</Filter>
+    </Font>
+    <Font Include="..\FuturisticYourself.ttf">
+      <Filter>Fichiers de ressources</Filter>
+    </Font>
+  </ItemGroup>
 </Project>

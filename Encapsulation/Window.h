@@ -11,7 +11,7 @@ public:
 	virtual void DrawSprite(Sprite* s) = 0;
 	virtual Sprite* CreateSprite() = 0;
 
-private:
+protected:
 
 };
 

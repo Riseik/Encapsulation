@@ -25,6 +25,7 @@ void WindowSDL::DrawSprite(Sprite* s)
 	SDL_RenderClear(render);
 	SDL_SetRenderDrawColor(render, 255, 255, 255, 255);
 	SDL_RenderCopy(render, (SDL_Texture*)s->GetData(), NULL, &a);
+	
 	SDL_RenderPresent(render);
 	int frameTime = SDL_GetTicks() - frameStart;
 
@@ -35,6 +36,13 @@ void WindowSDL::DrawSprite(Sprite* s)
 	else {
 		std::cout << 1000 / frameTime << std::endl;
 	}
+}
+
+void WindowSDL::DisplayText(const char* text)
+{
+	font = TTF_OpenFont("../Daydream.ttf", 24);
+	SDL_Color color = {255, 0, 0, 255};
+	SDL_Surface* textSurface = TTF_RenderText_Solid(font, text, color);
 }
 
 Sprite* WindowSDL::CreateSprite()
