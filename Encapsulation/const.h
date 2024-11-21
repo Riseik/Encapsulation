@@ -14,6 +14,8 @@
 
 #define FONT_PATH "../Daydream.ttf"
 
-#define FPS_TEXT_POSITION { 20, 20 }
+#define FPS_TEXT_POSITION_X 20
+#define FPS_TEXT_POSITION_Y 20
 #define FPS_TEXT_SIZE 10
 #define FPS_TEXT_SPACING 2
+static constexpr int coucou = 20;

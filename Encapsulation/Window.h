@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "const.h"
 #include "Sprite.h"
 
 class Window
