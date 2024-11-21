@@ -9,3 +9,5 @@
 #define MAX_BALL_SPEED 500
 
 #define IMAGE_PATH "../SCP.png"
+
+#define FPS_CAP 60

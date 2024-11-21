@@ -17,5 +17,7 @@ class WindowSDL : public Window
 private:
 	SDL_Window* window;
 	SDL_Renderer* render;
+
+	float frameDelay = 1000 / FPS_CAP;
 };
 
