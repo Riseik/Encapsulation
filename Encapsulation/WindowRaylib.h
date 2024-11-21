@@ -8,7 +8,7 @@ public:
 	void CreateWindow(const char*, int, int) override;
 	bool IsOpen() override;
 	void Clear() override;
-	void Draw(Sprite* s) override;
+	void Draw(std::vector<Sprite*>) override;
 	Sprite* CreateSprite() override;
 	bool Event() override;
 	void DestroyWindow() override;

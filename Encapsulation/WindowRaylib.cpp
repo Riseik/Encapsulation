@@ -25,7 +25,7 @@ void WindowRaylib::Clear()
 	ClearBackground(GRAY);
 }
 
-void WindowRaylib::Draw(Sprite* s)
+void WindowRaylib::Draw(std::vector<Sprite*> s)
 {
 	BeginDrawing();
 	std::string fpsText = "FPS Counter : " + std::to_string(GetFPS());

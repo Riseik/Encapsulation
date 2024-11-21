@@ -21,7 +21,7 @@ bool WindowSDL::IsOpen()
 	return window;
 }
 
-void WindowSDL::Draw(Sprite* s)
+void WindowSDL::Draw(std::vector<Sprite*> s)
 {
 	frameStart = SDL_GetTicks();
 

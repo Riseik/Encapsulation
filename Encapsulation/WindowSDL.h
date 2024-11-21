@@ -10,7 +10,7 @@ class WindowSDL : public Window
 	void CreateWindow(const char*, int, int) override;
 	void Clear() override;
 	bool IsOpen() override;
-	void Draw(Sprite* s) override;
+	void Draw(std::vector<Sprite*>) override;
 	bool Event() override;
 	void DestroyWindow() override;
 	bool CheckCloseWindow() override;
